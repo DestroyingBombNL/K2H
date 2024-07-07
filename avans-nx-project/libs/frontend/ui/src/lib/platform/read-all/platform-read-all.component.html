@@ -1,0 +1,7 @@
+<div class="grid grid-cols-4 gap-4">
+    <div *ngFor="let platform of platforms">
+        <div class="card w-55 bg-base-100 shadow-xl">
+            <figure><img src="{{ platform.imageLink }}" alt="an image of platform {{ platform.name }}" /></figure>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+To Do
+Logical Order
+Make a new branch
+
+Refactor:
+- Make the API endpoints not make me want to gauge out my eyes
+- Update the ERD and make full use of MongoDB
+- Make the website mobile friendly
+- Make a whole lot of methods and interfaces
+
+Functionality:
+- Update the color scheme, try to look for a pre-existing one
+- Add categories (and carousels) for the keys based off of HOTTEST, HIGHEST-RATED & NEW
+- Add missing functionality (first have to pinpoint what is required)
+
+Deployment & Testing:
+- Add tests/Deploy/CI/CD

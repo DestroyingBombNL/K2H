@@ -1,0 +1,43 @@
+a:hover {
+    opacity: 0.9 !important;
+}
+
+.card {
+    height: 250px;
+}
+
+.card img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+  }
+  
+.card:hover .card-actions {
+  max-height: 100px;
+}
+
+.badge {
+  transition: transform 0.5s ease;
+}
+
+.card:hover .badge {
+  transform: translateY(-3px);
+}
+
+img {
+  width: 15vw !important;
+  height: 28vh !important;
+  object-fit: cover;
+}
+
+.card {
+  height: 28vh;
+}

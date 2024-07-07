@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    background-color: #FFF8F8 !important;
+}
+  
+app-root {
+    background-color: #F8F8F8;
+    border: 5px solid #F5F5F5 !important;
+    border-radius: 20px;
+}
+
+.main {
+    margin-bottom: 7vh;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    margin-top: 7vh;
+}  

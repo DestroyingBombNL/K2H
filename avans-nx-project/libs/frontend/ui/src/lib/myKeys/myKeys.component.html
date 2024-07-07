@@ -1,0 +1,92 @@
+<div class="flex flex-col gap-2">
+    <p *ngIf="liveKeys && liveKeys.length === 0 && purchasedKeys && purchasedKeys.length === 0 && soldKeys && soldKeys.length === 0" class="font-serif text-2xl">
+        No keys have been put up for sale, bought or sold yet
+    </p>
+    <p *ngIf="liveKeys && liveKeys.length > 0" class="font-serif text-2xl">
+        Live - {{ liveKeys.length }}
+    </p>
+    <div *ngIf="liveKeys && liveKeys.length > 0" class="overflow flex flex-col gap-3">
+        <div class="card" *ngFor="let singleKey of liveKeys">
+            <div class="flex card-body justify-center">
+                <div class="flex card-body-flex gap-2">
+                    <img src="{{ singleKey?.seller?.imageLink }}"/>
+                    <div class="card-user-info flex flex-col">
+                        <p class="card-title font-serif text-xl"> {{ singleKey?.seller?.username }} </p>
+                        <p class="card-title font-serif text-xl"> ({{ singleKey?.seller?.rating }}⭐) </p>
+                        <div class="flex">
+                            <p class= "font-serif text-3"> ${{ singleKey?.price }}</p>
+                            <p class="badge badge-secondary"> {{ singleKey?.discount }}% - OFF</p>
+                        </div>
+                    </div>
+                    <img src="{{ singleKey?.platform?.imageLink }}"/>
+                    <div class="flex flex-col card-console-div">
+                        <p *ngFor="let console of singleKey?.platform?.console">
+                            {{console}}
+                        </p>
+                    </div>
+                    <p class="font-serif text-2xl">
+                    BuyDate: {{ singleKey?.buyDate }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p *ngIf="purchasedKeys && purchasedKeys.length > 0" class="font-serif text-2xl">
+        Purchased - {{ purchasedKeys.length }}
+    </p>
+    <div *ngIf="purchasedKeys && purchasedKeys.length > 0" class="overflow flex flex-col gap-3">
+        <div class="card" *ngFor="let singleKey of purchasedKeys">
+            <div class="flex card-body justify-center">
+                <div class="flex card-body-flex gap-2">
+                    <img src="{{ singleKey?.seller?.imageLink }}"/>
+                    <div class="card-user-info flex flex-col">
+                        <p class="card-title font-serif text-xl"> {{ singleKey?.seller?.username }} </p>
+                        <p class="card-title font-serif text-xl"> ({{ singleKey?.seller?.rating }}⭐) </p>
+                        <div class="flex">
+                            <p class= "font-serif text-3"> ${{ singleKey?.price }}</p>
+                            <p class="badge badge-secondary"> {{ singleKey?.discount }}% - OFF</p>
+                        </div>
+                    </div>
+                    <img src="{{ singleKey?.platform?.imageLink }}"/>
+                    <div class="flex flex-col card-console-div">
+                        <p *ngFor="let console of singleKey?.platform?.console">
+                            {{console}}
+                        </p>
+                    </div>
+                    <p class="font-serif text-2xl">
+                    BuyDate: {{ singleKey?.buyDate }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p *ngIf="soldKeys && soldKeys.length > 0" class="font-serif text-2xl">
+        Sold - {{ soldKeys.length }}
+    </p>
+    <div *ngIf="soldKeys && soldKeys.length > 0" class="overflow flex flex-col gap-3">
+        <div class="card" *ngFor="let singleKey of soldKeys">
+            <div class="flex card-body justify-center">
+                <div class="flex card-body-flex gap-2">
+                    <img src="{{ singleKey?.seller?.imageLink }}"/>
+                    <div class="card-user-info flex flex-col">
+                        <p class="card-title font-serif text-xl"> {{ singleKey?.seller?.username }} </p>
+                        <p class="card-title font-serif text-xl"> ({{ singleKey?.seller?.rating }}⭐) </p>
+                        <div class="flex">
+                            <p class= "font-serif text-3"> ${{ singleKey?.price }}</p>
+                            <p class="badge badge-secondary"> {{ singleKey?.discount }}% - OFF</p>
+                        </div>
+                    </div>
+                    <img src="{{ singleKey?.platform?.imageLink }}"/>
+                    <div class="flex flex-col card-console-div">
+                        <p *ngFor="let console of singleKey?.platform?.console">
+                            {{console}}
+                        </p>
+                    </div>
+                    <p class="font-serif text-2xl">
+                    BuyDate: {{ singleKey?.buyDate }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

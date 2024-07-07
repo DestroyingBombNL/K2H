@@ -1,0 +1,14 @@
+.form-control {
+  padding-right: 16px !important;
+  padding-left: 16px !important;
+}
+
+.form-control .input {
+  height: 38px;
+  width: 40vw;
+  margin-right: 80%;
+}
+
+.navbar {
+  position: absolute;
+}

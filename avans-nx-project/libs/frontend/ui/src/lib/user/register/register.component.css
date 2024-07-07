@@ -1,0 +1,36 @@
+.form-signin {
+    max-width: 330px;
+}
+
+.sign-up-text {
+    display: inline;
+}
+
+.sign-up {
+    text-decoration: underline;
+}
+
+.sign-up:link {
+    color: #0000EE; 
+}
+
+.sign-up:visited {
+    color: #551A8B; 
+}
+
+.invalid-input {
+    border: 2px solid red;
+}
+
+.error-message-visible {
+    margin-left: 4px;
+    opacity: 100% !important;
+    height: auto !important;
+    width: auto !important;
+}
+
+.form-signin > p {
+    opacity: 0%;
+    height: 0;
+    width: 0;
+}

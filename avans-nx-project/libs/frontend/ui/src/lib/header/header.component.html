@@ -1,0 +1,25 @@
+<div class="navbar bg-base-100">
+    <div class="flex-1">
+      <a routerLink="" class="btn btn-ghost text-xl">K2H</a>
+    </div>
+    <div class="form-control">
+      <input type="text" placeholder="Search for Keys" class="input input-bordered" />
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li><a routerLink="about">About</a></li>
+        <li><a routerLink="./">Store</a></li>
+        <li *ngIf="this.authenticationService.getUser()"><a routerLink="myKeys">My Keys</a></li>
+        <li *ngIf="this.authenticationService.getUser()"><a routerLink="sell">Sell</a></li>
+        <li *ngIf="!this.authenticationService.getUser()"> <a routerLink="login">Login / Register</a> </li>
+        <div *ngIf="this.authenticationService.getUser()" class="dropdown dropdown-end">
+          <p tabindex="0" role="button" class="btn btn-ghost"> {{ user?.username }} </p>
+          <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+            <li><a routerLink="profile"> Profile </a></li>
+            <!-- <li (click)="delete()"><a> Delete </a></li> -->
+            <li (click)="logout()"><a> Logout </a></li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+  </div>

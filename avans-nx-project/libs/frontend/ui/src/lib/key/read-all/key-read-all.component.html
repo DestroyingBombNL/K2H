@@ -1,0 +1,19 @@
+<div class="grid grid-cols-4 gap-4">
+    <div *ngFor="let key of keys">
+        <a routerLink="/game/{{ key.game.name }}">
+            <div class="card w-55 bg-base-100 shadow-xl image-full border-2 p-0">
+                <figure><img src="{{ key.game.imageLink }}"/></figure>
+                <div class="card-body">
+                    <h2 class="card-title">{{ key.game.name }} - ({{ key.platform.name }}) </h2>
+                    <p>${{ key.price }}</p>
+                    <div class="badge badge-secondary"> {{ key.discount }}% - OFF</div>
+                    <div class="card-actions justify-end">
+                        <div *ngFor="let genre of key.game.genres">
+                            <div class="badge badge-outline"> {{ genre }} </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

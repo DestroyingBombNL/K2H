@@ -1,0 +1,19 @@
+.form-signin {
+    max-width: 330px;
+}
+
+.sign-up-text {
+    display: inline;
+}
+
+.sign-up {
+    text-decoration: underline;
+}
+
+.sign-up:link {
+    color: #0000EE; 
+}
+
+.sign-up:visited {
+    color: #551A8B; 
+}

@@ -1,0 +1,80 @@
+<div class="flex flex-col gap-2">
+    <div class="flex justify-between"> 
+        <div class="flex">
+            <p class="font-serif text-2xl"> {{key?.game?.name}} - ({{ key?.game?.developer }})</p>
+            <div class="badge badge-primary">${{ key?.game?.storePrice }}</div>
+        </div>
+        <div class="flex ratingFlex">
+            <div class="rating" id="ratingContainer">
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" disabled />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" disabled />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" disabled />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" disabled />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" disabled />
+            </div>
+            <p class="font-serif amount-of-reviews"> (345.324) </p>
+        </div>
+        <div class="flex flexGenre">
+            <div class="badge badge-outline" *ngFor="let genre of key?.game?.genres"> 
+                {{ genre }} 
+            </div> 
+        </div>
+    </div>
+    <iframe class="aspect-video" src="https://www.youtube.com/embed/NAhrOoNR4ng?autoplay=1&mute=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+    <div class="flex additional-info">
+        <div class="game-img-div">
+            <img class="game-img" src="{{ key?.game?.imageLink }}" />
+        </div>
+        <div class="divider lg:divider-horizontal"></div> 
+        <div class="seller-div flex flex-col card bg-base-300 rounded-box">
+            <p class="justify-center card-title font-serif text-2xl">
+                Sellers 
+            </p>
+            <div class="overflow flex flex-col gap-3">
+                <div class="card" *ngFor="let singleKey of keys">
+                    <div class="flex card-body justify-center">
+                        <img class="card-buy" (click)="purchaseKey(singleKey?._id)" src="https://cdn-icons-png.flaticon.com/256/4437/4437635.png"/>
+                        <div class="flex card-body-flex gap-2">
+                            <img src="{{ singleKey?.seller?.imageLink }}"/>
+                            <div class="card-user-info flex flex-col">
+                                <p class="card-title font-serif text-xl"> {{ singleKey?.seller?.username }} </p>
+                                <p class="card-title font-serif text-xl"> ({{ singleKey?.seller?.rating }}⭐) </p>
+                                <div class="flex">
+                                    <p class= "font-serif text-3"> ${{ singleKey?.price }}</p>
+                                    <p class="badge badge-secondary"> {{ singleKey?.discount }}% - OFF</p>
+                                </div>
+                            </div>
+                            <img src="{{ singleKey?.platform?.imageLink }}"/>
+                            <div class="flex flex-col card-console-div">
+                                <p *ngFor="let console of singleKey?.platform?.console">
+                                    {{console}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        // Get the rating container
+        const ratingContainer = document.getElementById('ratingContainer');
+    
+        // Get the rating value from your data
+        const rating2 = {{ key.game.rating }}; // Replace with your actual rating value
+    
+        // Round the rating to the nearest multiple of 2
+        const roundedRating = Math.floor(rating2 / 2) * 2;
+    
+        // Get all input elements inside the rating container
+        const ratingInputs = ratingContainer.querySelectorAll('input[type="radio"]');
+    
+        // Loop through the input elements and add the "checked" attribute to the corresponding ones
+        for (let i = 0; i < ratingInputs.length; i++) {
+            if (i < roundedRating / 2) {
+                ratingInputs[i].checked = true;
+            }
+        }
+    </script>

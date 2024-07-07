@@ -1,0 +1,62 @@
+.additional-info {
+  height: 40vh;
+}
+
+.game-img-div {
+  width: 20vw;
+  aspect-ratio: 1 / 1;
+}
+
+.seller-div {
+  width: 37.5vw;
+}
+
+.game-img {
+  object-fit: cover !important;
+  width: 20vw;
+  height: 40vh;
+  aspect-ratio: 1 / 1;
+}
+
+.overflow {
+  height: 37vh;
+  overflow-y: scroll;
+}
+
+.card {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.card-body {
+  width: 100%;
+  padding: 10px !important;
+  border: 5px solid rgb(207, 14, 95) !important;
+  height: 12vh;
+}
+
+.overflow img {
+  width: 3vw;
+  height: 3vw;
+  aspect-ratio: 1 / 1;
+  object-fit: cover !important;
+  margin-top: 0.5vw;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-buy {
+  position: absolute;
+  margin-left: 29vw;
+  margin-bottom: 1.5vh;
+}
+
+.card-buy:hover {
+  opacity: 50%;
+}
+
+.card-user-info {
+  width: 10.5vw;
+}
